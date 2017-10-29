@@ -1,14 +1,14 @@
-%define		kdeplasmaver	5.5.4
+%define		kdeplasmaver	5.11.2
 %define		qtver		5.4.0
 %define		kpname		kgamma5
 Summary:	kgamma5
 Name:		kp5-%{kpname}
-Version:	5.5.4
+Version:	5.11.2
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	a6d759ea14f106701202b8c536dfb62c
+# Source0-md5:	c2e20de2d96370eebae0cdc007ee31b7
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5Gui-devel >= %{qtver}
@@ -53,11 +53,5 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{kpname}.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/qt5/plugins/kcm_kgamma.so
-%{_datadir}/kgamma/pics/background.png
-%{_datadir}/kgamma/pics/cmyscale.png
-%{_datadir}/kgamma/pics/darkgrey.png
-%{_datadir}/kgamma/pics/greyscale.png
-%{_datadir}/kgamma/pics/lightgrey.png
-%{_datadir}/kgamma/pics/midgrey.png
-%{_datadir}/kgamma/pics/rgbscale.png
+%{_datadir}/kgamma
 %{_datadir}/kservices5/kgamma.desktop
