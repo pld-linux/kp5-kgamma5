@@ -1,14 +1,14 @@
-%define		kdeplasmaver	5.14.4
-%define		qtver		5.4.0
+%define		kdeplasmaver	5.14.5
+%define		qtver		5.9.0
 %define		kpname		kgamma5
 Summary:	kgamma5
 Name:		kp5-%{kpname}
-Version:	5.14.4
+Version:	5.14.5
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	3c3ba960cca9349126dcafcbf702eab1
+# Source0-md5:	409923fbb5c1a3cbfc896d242d68e08c
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5Gui-devel >= %{qtver}
@@ -27,7 +27,10 @@ BuildRequires:	xz
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-kgamma5
+This module is a tool for monitor gamma correction. With proper gamma
+settings, your display (websites, images, etc.) will look the same on
+your monitor as on other monitors. It allows you to alter the
+monitor's gamma correction of the X-Server. But that's not all to do.
 
 %prep
 %setup -q -n %{kpname}-%{version}
