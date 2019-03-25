@@ -1,14 +1,14 @@
-%define		kdeplasmaver	5.14.5
+%define		kdeplasmaver	5.15.3
 %define		qtver		5.9.0
 %define		kpname		kgamma5
 Summary:	kgamma5
 Name:		kp5-%{kpname}
-Version:	5.14.5
+Version:	5.15.3
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	409923fbb5c1a3cbfc896d242d68e08c
+# Source0-md5:	cb4e1b8f8d4b4f3bf53a35b7bb02fe48
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5Gui-devel >= %{qtver}
@@ -19,6 +19,7 @@ BuildRequires:	gettext-devel
 BuildRequires:	kf5-extra-cmake-modules >= 1.4.0
 BuildRequires:	kf5-kdelibs4support-devel
 BuildRequires:	kf5-kdoctools-devel
+BuildRequires:	ninja
 BuildRequires:	qt5-build >= %{qtver}
 BuildRequires:	rpmbuild(macros) >= 1.164
 BuildRequires:	tar >= 1:1.22
@@ -38,15 +39,14 @@ monitor's gamma correction of the X-Server. But that's not all to do.
 %build
 install -d build
 cd build
-%cmake \
+%cmake -G Ninja \
 	-DKDE_INSTALL_USE_QT_SYS_PATHS=ON \
 	..
-%{__make}
+%ninja_build
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__make} -C build install \
-	DESTDIR=$RPM_BUILD_ROOT
+%ninja_install -C build
 
 %find_lang %{kpname} --all-name --with-kde
 
