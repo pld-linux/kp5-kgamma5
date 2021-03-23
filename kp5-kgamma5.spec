@@ -1,14 +1,14 @@
-%define		kdeplasmaver	5.21.2
+%define		kdeplasmaver	5.21.3
 %define		qtver		5.9.0
 %define		kpname		kgamma5
 Summary:	kgamma5
 Name:		kp5-%{kpname}
-Version:	5.21.2
+Version:	5.21.3
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	b5cc003f85c10c5f1b40debce10a2db2
+# Source0-md5:	0e4d9066724253fa7058e03872cffbe5
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5Gui-devel >= %{qtver}
