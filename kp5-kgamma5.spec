@@ -1,14 +1,14 @@
-%define		kdeplasmaver	5.23.5
+%define		kdeplasmaver	5.24.0
 %define		qtver		5.9.0
 %define		kpname		kgamma5
 Summary:	kgamma5
 Name:		kp5-%{kpname}
-Version:	5.23.5
+Version:	5.24.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	f9090c043db375ba77a6eba9f55db463
+# Source0-md5:	3dfd5a918fe12eaec8cf3fc291c69bfb
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5Gui-devel >= %{qtver}
@@ -56,6 +56,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{kpname}.lang
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/qt5/plugins/kcm_kgamma.so
+%{_libdir}/qt5/plugins/plasma/kcminit/kcm_kgamma_init.so
+%{_libdir}/qt5/plugins/plasma/kcms/systemsettings/kcm_kgamma.so
 %{_datadir}/kgamma
-%{_datadir}/kservices5/kgamma.desktop
