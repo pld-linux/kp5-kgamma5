@@ -1,17 +1,17 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeplasmaver	5.26.0
+%define		kdeplasmaver	5.26.1
 %define		qtver		5.15.2
 %define		kpname		kgamma5
 Summary:	kgamma5
 Name:		kp5-%{kpname}
-Version:	5.26.0
+Version:	5.26.1
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	3143b457204111a70fe0fa23599b6a14
+# Source0-md5:	8b1cc63a41934b937eaa73b9bdc6bbf6
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5Gui-devel >= %{qtver}
